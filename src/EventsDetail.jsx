@@ -21,6 +21,11 @@ export function EventsDetail() {
       <p><strong>ID :</strong> {eventsdetail.id}</p>
       <p><strong>Nom :</strong> {eventsdetail.name}</p>
       <p><strong>Date :</strong> {eventsdetail.date}</p>
+      <p><strong>Utilisateurs :</strong> {eventsdetail.Follower.map(user =>(
+        <li key={user.id}>
+          {user.username}
+        </li>
+      ))}</p>
       <p><strong>Artiste :</strong> <Link to={`/artist/${eventsdetail.id}`} style={{ color: "blue" }} > {eventsdetail.artist.name} </Link></p>
     </div>
   );
